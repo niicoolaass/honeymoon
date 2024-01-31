@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/6e412d0167.js" crossorigin="anonymous"></script>
+    <title>Login - Honeymoon</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;700&display=swap');
+
+        *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Nunito', sans-serif;
+        }
+
+        /* Centralizando itens na tela */
+
+        html{
+            width: 100vw;
+            height: 100vh;
+            font-size: 62.5%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-size: cover;
+            background-image: url('v.jpg');
+        }
+
+        .conteudo{
+            display: flex;
+        }
+
+        /* Login */
+        .login{
+            width: 450px;
+            height: 500px;
+            background-color: rgba(0, 0, 0, 0.712);
+            opacity: 95%;
+            border-radius: 3%;
+            padding: 3rem;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .login .tlogin{
+            font-size: 3rem;
+            align-self: flex-start;
+            font-weight: 600;
+            margin-top: 2rem;
+            margin-bottom: 3rem;
+            color:rgb(255, 255, 255);    
+        }
+
+        .login label{
+            font-size: 1.6rem;
+            font-weight: 500;
+            color:rgb(255, 255, 255);
+            margin-bottom: 0.5rem;
+        }
+
+        .login input {
+            margin-bottom: 4rem;
+            height: 3rem;
+            border: none;
+            border-bottom: 1px solid rgb(255, 255, 255);
+            background-color: transparent;
+            outline: none;
+            transition: all 200ms ease;
+            color:rgb(255, 255, 255);
+
+        }
+
+        .login input:hover{
+            border-bottom: 1px solid rgb(175, 116, 6);
+        }
+
+        .links{
+            display: flex;
+            justify-content: space-between;
+
+        }
+
+        .links a{
+            font-size: 1.3rem;
+            color:rgb(255, 255, 255);
+            margin-bottom: 2rem;
+            transition: all 200ms ease;
+        }
+
+        .links a:hover{
+            color: rgb(224, 224, 224);
+        }
+
+        .login button{
+            margin-bottom: 0.4rem;
+            height: 4rem;
+            width: 100%;
+            border: none;
+            color: white;
+            cursor: pointer;
+            font-size: 1.5rem;
+            border-radius: 4px;
+        }
+
+        span{
+            margin-left: 1rem;
+        }
+
+
+        .btn{
+            background-color: rgb(209, 142, 18);
+            transition: all 400ms ease-in-out;
+        }
+
+        .btn:hover{
+            background-color: rgb(175, 116, 6);
+        }
+
+        .facebook{
+            background-color: rgb(209, 142, 18);
+            transition: all 400ms ease-in-out;
+        }
+
+        .facebook:hover{
+            background-color: rgb(175, 116, 6);
+        }
+
+        .instagram{
+            background-color: rgb(209, 142, 18);
+            transition: all  400ms ease-in-out;
+        }
+
+        .instagram:hover{
+            background-color: rgb(175, 116, 6);
+        }
+    </style>
+</head>
+<body>
+    <div class="all">
+        <div class="login">
+            <legend class="tlogin">Login</legend>
+            <label for="email">E-mail:</label>
+            <input type="email" name="email" id="email">
+            <label for="passaword">Senha:</label>
+            <input type="password" name="password" id="password">
+            <div class="links">
+                <a href="#">Esqueceu a senha?</a>
+                <a href="/pages/cadastro/cadastro.html">Inscrever-se</a>
+            </div>
+        
+            <button class="btn">Entrar</button>
+            <div class="social">
+                <button class="facebook">
+                    <i class="fa-brands fa-facebook-f">
+                        <span>Entrar com facebook</span>
+                    </i>
+                </button>
+        
+                <button class="instagram">
+                    <i class="fa-brands fa-instagram"></i>
+                    <span>Entrar com instagram</span>
+                    </i>
+                </button>      
+        </div>
+    </div>
+</body>
+</html>

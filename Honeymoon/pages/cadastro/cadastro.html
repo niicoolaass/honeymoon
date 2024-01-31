@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/pages/cadastro/cadastro.css">
+    <title>Cadastro - Honeymoon</title>
+    <script src="https://kit.fontawesome.com/6e412d0167.js" crossorigin="anonymous"></script>
+    <script>
+
+        function verificar() {
+
+            //nome
+            var n = document.getElementById("nome").value;
+
+            if (n.length == 0 || !isNaN(n)) { 
+                document.getElementById("nome").style.borderBottom = "1px solid red";
+                return false; 
+        
+            } else {
+                document.getElementById("erroNome").textContent = "";
+                document.getElementById("nome").style.borderBottom = "";
+                return true;
+            }
+
+            //email
+            var e = document.getElementById("email").value;
+
+            if (e.indexOf("@" && ".com") < 0) { 
+                document.getElementById("email").style.borderBottom = "1px solid red";
+                return false; 
+            
+            } else {
+                document.getElementById("erroEmail").textContent = "";
+                document.getElementById("email").style.borderBottom = "";
+                return true;
+
+            }
+
+            //senha
+            var s = document.getElementById("senha").value;
+
+            if (s.length == 0) { 
+                document.getElementById("senha").style.borderBottom = "1px solid red";
+                return false; 
+        
+            } else {
+                document.getElementById("erroSenha").textContent = "";
+                document.getElementById("senha").style.borderBottom = "";
+                return true;
+
+            }
+
+            //confirme a senha
+            var sn = document.getElementById("senhaConf").value;
+
+            if (sn != s) { 
+                document.getElementById("senhaConf").style.borderBottom = "1px solid red";
+                return false; 
+        
+            } else {
+                document.getElementById("erroSenhaConf").textContent = "";
+                document.getElementById("senhaConf").style.borderBottom = "";
+                return true;
+
+            }
+            document.form1.submit();
+           
+        }
+
+    </script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;700&display=swap');
+
+    *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Nunito', sans-serif;
+    }
+
+    /* img */
+
+    .img{
+        width: 450px;
+        height: 500px;
+    }
+
+    img{
+        width: 100%;
+        height: 100%;
+        border-top-left-radius: 3%;
+        border-bottom-left-radius: 3%;
+    }
+
+    /* Centralizando itens na tela */
+
+    html{
+        width: 100vw;
+        height: 100vh;
+        font-size: 62.5%;
+        background-image: url(/img/login.jpg);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-size: cover;
+        background-image: url('v.jpg');
+    }
+
+    .conteudo{
+        display: flex;
+    }
+
+    /* Cadastro */
+    .cadastro{
+        width: 450px;
+        height: 700px;
+        background-color: rgba(0, 0, 0, 0.712);
+        border-radius: 3%;
+        padding: 3rem;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .cadastro .tcadastro{
+        font-size: 3rem;
+        align-self: flex-start;
+        font-weight: 600;
+        margin-top: 2rem;
+        margin-bottom: 3rem;
+        color:rgb(255, 255, 255);    
+    }
+
+    .cadastro label{
+        font-size: 1.6rem;
+        font-weight: 500;
+        color:rgb(255, 255, 255);
+        margin-bottom: 0.5rem;
+    }
+
+    .cadastro input[type=text], input[type=email], input[type=password] {
+        margin-bottom: 4rem;
+        height: 3rem;
+        border: none;
+        border-bottom: 1px solid rgb(255, 255, 255);
+        background-color: transparent;
+        outline: none;
+        transition: all 200ms ease;
+        color:rgb(224, 224, 224);
+
+    }
+
+    .cadastro input:hover{
+        border-bottom: 1px solid rgb(209, 142, 18);
+    }
+
+    .links{
+        display: flex;
+        justify-content: end;
+
+    }
+
+    .links a{
+        font-size: 1.3rem;
+        color:rgb(255, 255, 255);
+        margin-bottom: 2rem;
+        transition: all 200ms ease;
+    }
+
+    .links a:hover{
+        color: rgb(224, 224, 224);
+    }
+    
+    #submit {
+        cursor: pointer;
+        margin-bottom: 6px;
+        height: 4rem;
+        width: 100%;
+        border: none;
+        background-color: rgb(209, 142, 18);
+        color: white;
+        cursor: pointer;
+        font-size: 1.5rem;
+        border-radius: 4px;
+        transition: all 400ms ease-in-out;
+    }
+
+    #submit:hover {
+        background-color: rgb(175, 116, 6);
+    }
+
+    .cadastro button  {
+        height: 4rem;
+        width: 100%;
+        border: none;
+        color: white;
+        cursor: pointer;
+        font-size: 1.5rem;
+        border-radius: 4px;
+    }
+
+    span{
+        margin-left: 1rem;
+    }
+
+    .facebook{
+        margin-bottom: 6px;
+        background-color: rgb(209, 142, 18);
+        transition: all 400ms ease-in-out;
+    }
+
+    .facebook:hover{
+        background-color: rgb(175, 116, 6);
+    }
+
+    .instagram{
+        background-color: rgb(209, 142, 18);
+        transition: all  400ms ease-in-out;
+    }
+
+    .instagram:hover{
+        background-color: rgb(175, 116, 6);
+    }
+
+
+
+    </style>
+</head>
+<body>
+    <form name="form1" method="post" onsubmit="verificar()" action="grava.jsp" >
+        <div class="cadastro">
+            <legend class="tcadastro">Cadastrar</legend>
+
+            <label for="nome">Nome:</label>
+            <input type="text" name="nome" id="nome">
+            <span id="erroNome"></span>
+
+            <label for="email">E-mail:</label>
+            <input type="email" name="email" id="email">
+            <span id="erroEmail"></span>
+
+            <label for="passaword">Senha:</label>
+            <input type="password" name="senha" id="senha">
+            <span id="erroSenha"></span>
+
+            <label for="passaword">Confirme sua senha:</label>
+            <input type="password" name="senhaconf" id="senhaConf">
+            <span id="erroSenhaConf"></span>
+
+            <div class="links">
+                <a href="/pages/login/login.html">Já tem uma conta?</a>
+            </div>
+            
+            <input  class="btn" id="submit" type="submit" onclick="verificar()" value="Cadastrar">
+
+
+            <div class="social">
+                <button class="facebook">
+                    <i class="fa-brands fa-facebook-f">
+                         <span>Entrar com facebook</span>
+                    </i>
+                 </button>
+        
+                 <button class="instagram">
+                    <i class="fa-brands fa-instagram"></i>
+                     <span>Entrar com instagram</span>
+                     </i>
+                  </button>  
+              </div>
+            </div>
+    </form>
+
+</body>
+</html>
