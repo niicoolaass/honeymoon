@@ -10,14 +10,15 @@
     <script>
 
         function verificar() {
-
+                                    
             //nome
             var n = document.getElementById("nome").value;
+            var valido = true;
 
             if (n.length == 0 || !isNaN(n)) { 
                 document.getElementById("nome").style.borderBottom = "1px solid red";
                 return false; 
-        
+                                                            
             } else {
                 document.getElementById("erroNome").textContent = "";
                 document.getElementById("nome").style.borderBottom = "";
@@ -26,8 +27,9 @@
 
             //email
             var e = document.getElementById("email").value;
+            var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Expressão regular para validar email
 
-            if (e.indexOf("@" && ".com") < 0) { 
+            if (!emailRegex.test(e)) { 
                 document.getElementById("email").style.borderBottom = "1px solid red";
                 return false; 
             
@@ -65,8 +67,12 @@
                 return true;
 
             }
+
+            if (valido) {
             document.form1.submit();
-           
+            }   
+
+            return valido;           
         }
 
     </script>
@@ -223,9 +229,6 @@
     .instagram:hover{
         background-color: rgb(175, 116, 6);
     }
-
-
-
     </style>
 </head>
 <body>
